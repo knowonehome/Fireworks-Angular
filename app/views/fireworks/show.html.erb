@@ -1,14 +1,22 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Description:</strong>
-  <%= @firework.description %>
+  <strong>Name:</strong>
+  <%= @firework.name %>
+  <strong>Alt Name:</strong>
+  <% @firework.alternate_names.each do |alternate_name| %>
+    <%= alternate_name.name %>
+    <% end %>
 </p>
 
 <p>
   <strong>Style:</strong>
   <%= @firework.style %>
 </p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @firework.description %>
+</p>
+
 
 <%= link_to 'Edit', edit_firework_path(@firework) %> |
 <%= link_to 'Back', fireworks_path %>

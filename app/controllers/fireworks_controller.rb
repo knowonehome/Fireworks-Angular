@@ -10,6 +10,7 @@ class FireworksController < ApplicationController
   # GET /fireworks/1
   # GET /fireworks/1.json
   def show
+    @firework.alternate_names.name
   end
 
   # GET /fireworks/new
@@ -25,7 +26,6 @@ class FireworksController < ApplicationController
   # POST /fireworks.json
   def create
     @firework = Firework.new(firework_params)
-
     respond_to do |format|
       if @firework.save
         format.html { redirect_to @firework, notice: 'Firework was successfully created.' }
@@ -69,6 +69,6 @@ class FireworksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def firework_params
-      params.require(:firework).permit(:description, :style)
+      params.require(:firework).permit(:description, :style, :name, alternate_names_attributes: [:name, :firework_id])
     end
 end
