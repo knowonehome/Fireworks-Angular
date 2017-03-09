@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Firework List</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if notice %>
+      <div class="alert alert-info" id="notice_wrapper" role="alert"  >
+        <i class="fa fa-2x fa-info"></i> &nbsp; <%= notice %>
+      </div>
+    <% elsif alert %>
+      <div class="alert alert-warning" id="notice_wrapper" role="alert" >
+        <i class="fa fa-2x fa-info"></i> &nbsp; <%= alert %>
+      </div>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @firework.description %>
+</p>
+
+<p>
+  <strong>Style:</strong>
+  <%= @firework.style %>
+</p>
+
+<%= link_to 'Edit', edit_firework_path(@firework) %> |
+<%= link_to 'Back', fireworks_path %>
